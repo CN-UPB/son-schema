@@ -124,8 +124,33 @@ properties:
     description: "The recursive NSs (their descriptors), that are part of this network service."
     type: "array"
     items: 
-      type: "string"
-    minItems: 0
+      type: "object"
+      properties:
+        vnf_id:
+          description: "A unique identifier of this network service within the scope of this NS descriptor."
+          type: "string"
+        vnf_vendor:
+          description: "The vendor id identifies the NS descriptor uniquely across all service descriptors."
+          type: "string"
+          pattern: "^[a-z0-9\\-_.]+$"
+        vnf_name:
+          description: "The name of the service descriptor."
+          type: "string"
+          pattern: "^[a-z0-9\\-_.]+$"
+        vnf_version:
+          description: "The version of the service descriptor."
+          type: "string"
+          pattern: "^(== |>= |<= |!= )?[0-9\\-_.]+$"
+        description:
+          description: "A longer description of the network service."
+          type: "string"
+      required:
+        - ns_id
+        - ns_vendor
+        - ns_name
+        - ns_version
+      additionalProperties: false
+    minItems: 1
     uniqueItems: true
     # How do I write down that there must be at least one of VNFDs or NSDs?
   connection_points:
