@@ -126,18 +126,18 @@ properties:
     items: 
       type: "object"
       properties:
-        vnf_id:
+        ns_id:
           description: "A unique identifier of this network service within the scope of this NS descriptor."
           type: "string"
-        vnf_vendor:
+        ns_vendor:
           description: "The vendor id identifies the NS descriptor uniquely across all service descriptors."
           type: "string"
           pattern: "^[a-z0-9\\-_.]+$"
-        vnf_name:
+        ns_name:
           description: "The name of the service descriptor."
           type: "string"
           pattern: "^[a-z0-9\\-_.]+$"
-        vnf_version:
+        ns_version:
           description: "The version of the service descriptor."
           type: "string"
           pattern: "^(== |>= |<= |!= )?[0-9\\-_.]+$"
