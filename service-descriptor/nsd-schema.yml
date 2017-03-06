@@ -326,13 +326,13 @@ properties:
               type: "string"
             vnf_event: 
               type: "string"
-  vnf_dependencies: 
+  vnf_dependency: 
     type: "array"
     items: 
       type: "string"
     minItems: 0
     uniqueItems: true
-  service_dependencies: 
+  service_dependency: 
     type: "array"
     items: 
       type: "string"
